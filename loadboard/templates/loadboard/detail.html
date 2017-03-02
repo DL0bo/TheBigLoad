@@ -1,0 +1,23 @@
+{% extends 'loadboard/base.html' %}
+
+<head>
+    <title>{% block title %}{{company.Company}}'s loadboard{% endblock %}</title>
+</head>
+
+
+<body>
+    {% block body %}
+
+        <h1> {{company.Company}} </h1>
+        <h4>Credit Score: {{company.CreditScore}}</h4>
+
+            {% for lb in company.loadboard_table_set.all %}
+                <input type="radio" id="lb{{ forloop.counter }}" name="lb" value="{{ lb.id }}" />
+                <label for="lb{{ forloop.counter }}">
+                    {{ lb.Origin }} ---> {{lb.Destination}}
+                </label><br>
+            {% endfor %}
+
+
+    {% endblock %}
+</body>

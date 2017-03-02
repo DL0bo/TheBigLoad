@@ -1,0 +1,11 @@
+{% extends 'loadboard/base.html' %}
+
+{% block body %}
+
+        <ul>
+            {% for company in all_companies %}
+            <li><a href="{% url 'loadboard:detail' company.id %}">{{company.Company}}</a></li>
+            {% endfor %}
+        </ul>
+
+{% endblock %}
