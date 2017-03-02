@@ -16,6 +16,6 @@ urlpatterns = [
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
 
     # /loadboard/loadboarditem/add/
-    url(r'loadboarditem/add/$', views.LoadboardCreate.as_view(), name='loadboarditem-add')
+    #url(r'loadboarditem/add/$', views.LoadboardCreate.as_view(), name='loadboarditem-add')
 
 ]
