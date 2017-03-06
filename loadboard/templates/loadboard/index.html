@@ -2,10 +2,36 @@
 
 {% block body %}
 
-        <ul>
-            {% for company in all_companies %}
-            <li><a href="{% url 'loadboard:detail' company.id %}">{{company.Company}}</a></li>
-            {% endfor %}
-        </ul>
+    <table class="table-condensed table-bordered table-hover" style="width:60%" align="center">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Company Name</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
 
+        {% for item in all_loadboard %}
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        <a href="{% url 'loadboard:detail' item.id %}">{{item.CompanyName}}</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'loadboard:detail' item.id %}">{{item.Origin}}</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'loadboard:detail' item.id %}">{{item.Destination}}</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'loadboard:detail' item.id %}">{{item.Email}}</a>
+                    </td>
+                </tr>
+            </tbody>
+       {% endfor %}
+    </table>
 {% endblock %}
