@@ -13,7 +13,7 @@ urlpatterns = [
 
     # /loadboard/71/
     #Note: the ?P below is basically how you use pass parameter of company_table_id
-    url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
+    url(r'^([0-9]+)/$', views.ViewCompanyDetails, name='detail'),
 
     # /loadboard/loadboarditem/add/
     #url(r'loadboarditem/add/$', views.LoadboardCreate.as_view(), name='loadboarditem-add')

@@ -19,16 +19,16 @@
                 <tr>
 
                     <td>
-                        <a href="{% url 'loadboard:detail' item.id %}">{{item.CompanyName}}</a>
+                        <a href="{% url 'loadboard:detail' item.CompanyName_id %}">{{item.CompanyName}}</a>
                     </td>
                     <td>
-                        <a href="{% url 'loadboard:detail' item.id %}">{{item.Origin}}</a>
+                        <a href="{% url 'loadboard:detail' item.CompanyName_id %}">{{item.Origin}}</a>
                     </td>
                     <td>
-                        <a href="{% url 'loadboard:detail' item.id %}">{{item.Destination}}</a>
+                        <a href="{% url 'loadboard:detail' item.CompanyName_id %}">{{item.Destination}}</a>
                     </td>
                     <td>
-                        <a href="{% url 'loadboard:detail' item.id %}">{{item.Email}}</a>
+                        <a href="{% url 'loadboard:detail' item.CompanyName_id %}">{{item.Email}}</a>
                     </td>
                 </tr>
             </tbody>
