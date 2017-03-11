@@ -7,8 +7,11 @@ from django.core.urlresolvers import reverse
 class Company_table(models.Model):
     CompanyName = models.CharField(max_length=128)
     Address = models.CharField(max_length=1024)
-    CreditScore = models.IntegerField(4)
-    Companylogo = models.CharField(max_length=1024,null=True)
+    CreditScore = models.IntegerField(max_length=4)
+    CompanyLogo = models.CharField(max_length=1024,null=True)
+
+    def get_absolute_url(self):
+        return reverse('loadboard:detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.CompanyName

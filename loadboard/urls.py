@@ -16,6 +16,6 @@ urlpatterns = [
     url(r'^([0-9]+)/$', views.ViewCompanyDetails, name='detail'),
 
     # /loadboard/loadboarditem/add/
-    #url(r'loadboarditem/add/$', views.LoadboardCreate.as_view(), name='loadboarditem-add')
+    url(r'loadboard/add/$', views.CompanyCreate.as_view(), name='company-add')
 
 ]

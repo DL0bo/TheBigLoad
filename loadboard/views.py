@@ -1,6 +1,7 @@
 from django.views import generic
 from django.shortcuts import render
 from .models import Company_table, Loadboard_table
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 class IndexView(generic.ListView):
@@ -12,12 +13,12 @@ class IndexView(generic.ListView):
 
 def ViewCompanyDetails(request, CompanyId):
     CompanyObject = Company_table.objects.get(id = CompanyId)
-    context = {'Company': CompanyObject}
+    context = {'Company': CompanyObject,}
     return render(request, 'loadboard/detail.html', context)
 
 
-class LoadboardCreate(generic.CreateView):
-    model = Loadboard_table
-    fields = ['Origin', 'Destination', 'Company', 'Email']
+class CompanyCreate(generic.CreateView):
+    model = Company_table
+    fields = ['CompanyName', 'Address', 'CreditScore', 'CompanyLogo']
 
 
