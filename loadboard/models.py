@@ -11,7 +11,7 @@ class Company_table(models.Model):
     CompanyLogo = models.CharField(max_length=1024,null=True)
 
     def get_absolute_url(self):
-        return reverse('loadboard:detail', kwargs={'pk': self.pk})
+        return reverse('loadboard:detail', kwargs={'companyId': self.pk})
 
     def __str__(self):
         return self.CompanyName
