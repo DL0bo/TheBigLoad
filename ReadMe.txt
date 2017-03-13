@@ -1,10 +1,1 @@
-SuperUser
-
-username = admin
-password = password123456
-
-
-User
-
-username = Anil Jose T Pain
-password = password123456
+This is my poject to try and create a loadboard site. The site is in the initial stages so not much description to go about on this readme.
