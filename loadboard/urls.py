@@ -16,6 +16,12 @@ urlpatterns = [
     url(r'^(?P<companyId>[0-9]+)/$', views.ViewCompanyDetails, name='detail'),
 
     # /loadboard/company/add/
-    url(r'company/add/$', views.CompanyCreate.as_view(), name='company-add')
+    url(r'company/add/$', views.CompanyCreate.as_view(), name='company-add'),
+
+    # /loadboard/company/#/
+    url(r'company/(?P<companyId>[0-9]+)/$', views.CompanyUpdate.as_view(), name='company-update'),
+
+    # /loadboard/company/#/delete/
+    url(r'company/(?P<companyId>[0-9]+)/delete/$', views.CompanyDelete.as_view(), name='company-delete'),
 
 ]

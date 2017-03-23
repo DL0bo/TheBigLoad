@@ -1,0 +1,37 @@
+{% extends 'loadboard/base.html' %}
+
+{% block body %}
+
+    <table class="table-condensed table-bordered table-hover" style="width:60%" align="center">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Company Name</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+
+        {% for item in all_loadboard %}
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        <a href="{% url 'loadboard:detail' item.CompanyName_id %}">{{item.CompanyName}}</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'loadboard:detail' item.CompanyName_id %}">{{item.Origin}}</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'loadboard:detail' item.CompanyName_id %}">{{item.Destination}}</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'loadboard:detail' item.CompanyName_id %}">{{item.Email}}</a>
+                    </td>
+                </tr>
+            </tbody>
+       {% endfor %}
+    </table>
+{% endblock %}

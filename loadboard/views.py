@@ -1,6 +1,7 @@
 from django.views import generic
 from django.shortcuts import render
 from .models import Company_table, Loadboard_table
+from django.core.urlresolvers import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
@@ -20,5 +21,13 @@ def ViewCompanyDetails(request, companyId):
 class CompanyCreate(CreateView):
     model = Company_table
     fields = ['CompanyName', 'Address', 'CreditScore', 'CompanyLogo']
+
+class CompanyUpdate(UpdateView):
+    model = Company_table
+    fields = ['CompanyName', 'Address', 'CreditScore', 'CompanyLogo']
+
+class CompanyDelete(DeleteView):
+    model = Company_table
+    success_url = reverse_lazy('loadboard:index')
 
 
